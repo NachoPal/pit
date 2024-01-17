@@ -1,0 +1,194 @@
+{
+    "Create a new Tests suit" : {
+      "prefix": "tests:",
+      "body": [
+        "tests:",
+        "  - name: ${1:Tests}",
+        "    describes:",
+        "      - name: ${2:Describe}",
+        "        its:",
+        "          - name: ${3:Should do something}",
+        "            actions:",
+        "              - extrinsics:",
+        "                - chain: ${4:*your_chain}",
+        "                  signer: ${5:*signer}",
+        "                  pallet: ${6:palletName}",
+        "                  call: ${7:callName}",
+        "                  args: []",
+        "                  events:",
+        "                    - name: ${8:palletName.EventName}",
+        "                      result: ${9}"
+      ],
+      "description": "Create a new tests suit"
+    },
+    "Create a Describe section" : {
+      "prefix": "describes:",
+      "body": [
+        "describes:",
+        "  - name: ${1:Describe}",
+        "    its:",
+        "      - name: ${2:Should do something}",
+        "        actions:",
+        "          - extrinsics:",
+        "            - chain: ${3:*your_chain}",
+        "              signer: ${4:*signer}",
+        "              pallet: ${5:palletName}",
+        "              call: ${6:callName}",
+        "              args: []",
+        "              events:",
+        "                - name: ${7:palletName.EventName}",
+        "                  result: ${8}"
+      ],
+      "description": "Create a Describe section"
+    },
+    "Create a Describe" : {
+      "prefix": "- name describe",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  its:",
+        "    - name: ${2:Should do something}",
+        "      actions:",
+        "        - extrinsics:",
+        "          - chain: ${3:*your_chain}",
+        "            signer: ${4:*signer}",
+        "            pallet: ${5:palletName}",
+        "            call: ${6:callName}",
+        "            args: []",
+        "            events:",
+        "              - name: ${7:palletName.EventName}",
+        "                result: ${8}"
+      ],
+      "description": "Create a Describe"
+    },
+    "Create Its array section" : {
+      "prefix": "its:",
+      "body": [
+        "its:",
+        "  - name: ${1:Should do something}",
+        "    actions:",
+        "      - extrinsics:",
+        "        - chain: ${2:*your_chain}",
+        "          signer: ${3:*signer}",
+        "          pallet: ${4:palletName}",
+        "          call: ${5:callName}",
+        "          args: []",
+        "          events:",
+        "            - name: ${6:palletName.EventName}",
+        "              result: ${7}"
+      ],
+      "description": "Create Its array section"
+    },
+    "Create a Its Asserts Action section" : {
+      "prefix": "- name it asserts isSome",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key:}",
+        "          isSome:",
+        "            args: []"
+      ],
+      "description": "Create a Its Asserts Action section"
+    },
+    // TODO: add more asserts
+    "Create a Its Query Action section" : {
+      "prefix": "- name it queries",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - queries:",
+        "        ${2:your_query_key:}",
+        "          chain: ${3:*your_chain}",
+        "          pallet: ${4:palletName}",
+        "          call: ${5:callName}",
+        "          args: []"
+      ],
+      "description": "Create a Its Query Action section"
+    },
+    "Create a Queries array section" : {
+      "prefix": "- queries:",
+      "body": [
+        "- queries:",
+        "    ${1:your_query:}",
+        "      chain: ${2:*your_chain}",
+        "      pallet: ${3:palletName}",
+        "      call: ${4:callName}",
+        "      args: []"
+      ],
+      "description": "Create a Queries array section"
+    },
+    "Create a Query section" : {
+      "prefix": "query:",
+      "body": [
+        "${1:your_query:}",
+        "  chain: ${2:*your_chain}",
+        "  pallet: ${3:palletName}",
+        "  call: ${4:callName}",
+        "  args: []"
+      ],
+      "description": "Create a Query section"
+    },
+    "Create a Its Extrinsics Action section" : {
+      "prefix": "- name it extrinsics",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - extrinsics:",
+        "      - chain: ${2:*your_chain}",
+        "        signer: ${3:*signer}",
+        "        pallet: ${4:palletName}",
+        "        call: ${5:callName}",
+        "        args: []",
+        "        events:",
+        "          - name: ${6:palletName.EventName}",
+        "            result: ${7}"
+      ],
+      "description": "Create a Its Extrinsics Action section"
+    },
+    "Create an Extrinsics array section" : {
+      "prefix": "- extrinsics:",
+      "body": [
+        "- extrinsics:",
+        "  - chain: ${1:*your_chain}",
+        "    signer: ${2:*signer}",
+        "    pallet: ${3:palletName}",
+        "    call: ${4:callName}",
+        "    args: []",
+        "    events:",
+        "      - name: ${5:palletName.EventName}",
+        "        result: ${6}"
+      ],
+      "description": "Create an Extrinsics array section"
+    },
+    "Create an Extrinsic section" : {
+      "prefix": "- chain:",
+      "body": [
+        "- chain: ${1:*your_chain}",
+        "  signer: ${2:*signer}",
+        "  pallet: ${3:palletName}",
+        "  call: ${4:callName}",
+        "  args: []",
+        "  events:",
+        "    - name: ${5:palletName.EventName}",
+        "      result: ${6}"
+      ],
+      "description": "Create an Extrinsic section"
+    },
+    "Create an Event section" : {
+      "prefix": "events:",
+      "body": [
+        "events:",
+        "  - name: ${1:palletName.EventName}",
+        "    result: ${2}"
+      ],
+      "description": "Create an Event section"
+    },
+    "Create an Event" : {
+      "prefix": "- name event",
+      "body": [
+        "- name: ${1:palletName.EventName}",
+        "  result: ${2}"
+      ],
+      "description": "Create an Event"
+    }
+}
