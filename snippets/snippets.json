@@ -502,8 +502,8 @@
       ],
       "description": "Create a Query section"
     },
-    "Create a Its Query Customs section": {
-      "prefix": "it actions queries",
+    "Create a Its Customs Action section": {
+      "prefix": "it actions customs",
       "body": [
         "- name: ${1:Should do something}",
         "  actions:",
@@ -514,7 +514,172 @@
         "          - name: ${3:palletName.EventName}",
         "            result: ${4}"
       ],
-      "description": "Create a Its Query Custom section"
+      "description": "Create a Its Customs Action section"
+    },
+    "Create a Its Rpcs Action section": {
+      "prefix": "it actions rpcs",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - rpcs:",
+        "        ${2:your_rpc_key}:",
+        "          chain: ${3:*your_chain}",
+        "          method: ${4:methodName}",
+        "          call: ${5:callName}",
+        "          args: []",
+        "          events:",
+        "            - name: ${6:palletName.EventName}",
+        "              result: ${7}"
+      ],
+      "description": "Create a Its Rpcs Action section"
+    },
+    "Create a Its Block Travels Action section": {
+      "prefix": "it actions block_travels",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - block_travels:",
+        "      - chain: ${2:*your_chain}",
+        "        date: ${3:1705589192}",
+        "        events:",
+        "          - name: ${4:palletName.EventName}",
+        "            result: ${5}"
+      ],
+      "description": "Create a Its Block Travels Action section"
+    },
+    "Create a Block Travels section": {
+      "prefix": "block_travels",
+      "body": [
+        "- block_travels:",
+        "  - chain: ${1:*your_chain}",
+        "    date: ${2:1705589192}",
+        "    events:",
+        "      - name: ${3:palletName.EventName}",
+        "        result: ${4}"
+      ],
+      "description": "Create a Block Travels section"
+    },
+    "Create a Block Travel section": {
+      "prefix": "block_travel",
+      "body": [
+        "- chain: ${1:*your_chain}",
+        "  date: ${2:1705589192}",
+        "  events:",
+        "    - name: ${3:palletName.EventName}",
+        "      result: ${4}"
+      ],
+      "description": "Create a Block Travelw section"
+    },
+    "Create a Its Time Travels Action section": {
+      "prefix": "it actions time_travels",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - time_travels:",
+        "      - chain: ${2:*your_chain}",
+        "        date: ${3:1}",
+        "        events:",
+        "          - name: ${4:palletName.EventName}",
+        "            result: ${5}"
+      ],
+      "description": "Create a Its Time Travels Action section"
+    },
+    "Create a Time Travels section": {
+      "prefix": "time_travels",
+      "body": [
+        "- time_travels:",
+        "  - chain: ${1:*your_chain}",
+        "    date: ${2:1}",
+        "    events:",
+        "      - name: ${3:palletName.EventName}",
+        "        result: ${4}"
+      ],
+      "description": "Create a Time Travels section"
+    },
+    "Create a Time Travel section": {
+      "prefix": "time_travel",
+      "body": [
+        "- chain: ${1:*your_chain}",
+        "  date: ${2:1}",
+        "  events:",
+        "    - name: ${3:palletName.EventName}",
+        "      result: ${4}"
+      ],
+      "description": "Create a Time Travel section"
+    },
+    "Create a Its Set Storages Action section": {
+      "prefix": "it actions set_storages",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - set_storages:",
+        "      - chain: ${2:*your_chain}",
+        "        storage: ${3:{}}",
+        "        events:",
+        "          - name: ${4:palletName.EventName}",
+        "            result: ${5}"
+      ],
+      "description": "Create a Its Set Storage Action section"
+    },
+    "Create a Set Storages section": {
+      "prefix": "set_storages",
+      "body": [
+        "- set_storages:",
+        "  - chain: ${1:*your_chain}",
+        "    storage: ${2:{}}",
+        "    events:",
+        "      - name: ${3:palletName.EventName}",
+        "        result: ${4}"
+      ],
+      "description": "Create a Set Storages section"
+    },
+    "Create a Set Storage section": {
+      "prefix": "set_storage",
+      "body": [
+        "- chain: ${1:*your_chain}",
+        "  storage: ${2:{}}",
+        "  events:",
+        "    - name: ${3:palletName.EventName}",
+        "      result: ${4}"
+      ],
+      "description": "Create a Set Storage section"
+    },
+    "Create a Its Set Heads Action section": {
+      "prefix": "it actions set_heads",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - set_heads:",
+        "      - chain: ${2:*your_chain}",
+        "        block: ${3:\"0x0000000000000000000000000000000000000000000000000000000000000000\"}",
+        "        events:",
+        "          - name: ${4:palletName.EventName}",
+        "            result: ${5}"
+      ],
+      "description": "Create a Its Set Heads Action section"
+    },
+    "Create a Set Heads section": {
+      "prefix": "set_heads",
+      "body": [
+        "- set_heads:",
+        "  - chain: ${2:*your_chain}",
+        "    block: ${\"3:0x0000000000000000000000000000000000000000000000000000000000000000\"}",
+        "    events:",
+        "      - name: ${4:palletName.EventName}",
+        "        result: ${5}"
+      ],
+      "description": "Create a Set Heads section"
+    },
+    "Create a Set Head section": {
+      "prefix": "set_head",
+      "body": [
+        "- chain: ${2:*your_chain}",
+        "  block: ${\"3:0x0000000000000000000000000000000000000000000000000000000000000000\"}",
+        "  events:",
+        "    - name: ${4:palletName.EventName}",
+        "      result: ${5}"
+      ],
+      "description": "Create a Set Head section"
     },
     "Create a Its Extrinsics Action section": {
       "prefix": "it actions extrinsics",
@@ -562,14 +727,14 @@
       ],
       "description": "Create an Extrinsic section"
     },
-    "Create an Event section": {
+    "Create an Events section": {
       "prefix": "events",
       "body": [
         "events:",
         "  - name: ${1:palletName.EventName}",
         "    result: ${2}"
       ],
-      "description": "Create an Event section"
+      "description": "Create an Events section"
     },
     "Create an Event": {
       "prefix": "event",
@@ -577,6 +742,67 @@
         "- name: ${1:palletName.EventName}",
         "  result: ${2}"
       ],
-      "description": "Create an Event"
+      "description": "Create an Event section"
+    },
+    "Create a Chains section": {
+      "prefix": "chains",
+      "body": [
+        "chains:",
+        "  ${1:your_chain_key}:",
+        "    wsPort: ${2:8000}",
+        "    paraId: ${3:2000}"
+      ],
+      "description": "Create a Chains section"
+    },
+    "Create a Chain section": {
+      "prefix": "chain",
+      "body": [
+        "${1:your_chain_key}:",
+        "  wsPort: ${2:8000}",
+        "  paraId: ${3:2000}"
+      ],
+      "description": "Create a Chains section"
+    },
+    "Create a DecodedCalls section": {
+      "prefix": "decodedCalls",
+      "body": [
+        "decodedCalls:",
+        "  ${1:your_call_key}:",
+        "    chain: ${2:*your_chain}",
+        "    signer: ${3:*signer}",
+        "    pallet: ${4:palletName}",
+        "    call: ${5:callName}",
+        "    args: []"
+      ],
+      "description": "Create a DecodedCalls section"
+    },
+    "Create a DecodedCall section": {
+      "prefix": "decodedCall",
+      "body": [
+        "${1:your_call_key}:",
+        "  chain: ${2:*your_chain}",
+        "  signer: ${3:*signer}",
+        "  pallet: ${4:palletName}",
+        "  call: ${5:callName}",
+        "  args: []"
+      ],
+      "description": "Create a DecodedCall section"
+    },
+    "Create a Runtimes section": {
+      "prefix": "runtimes",
+      "body": [
+        "runtimes:",
+        "  ${1:your_runtime_file_key}:",
+        "    path: ${3:./path/to/runtime/file}"
+      ],
+      "description": "Create a Runtimes section"
+    },
+    "Create a Runtime section": {
+      "prefix": "runtime",
+      "body": [
+        "${1:your_runtime_file_key}:",
+        "  path: ${3:./path/to/runtime/file}"
+      ],
+      "description": "Create a Runtime section"
     }
 }
