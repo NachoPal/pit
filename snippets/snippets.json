@@ -44,7 +44,7 @@
     "Create a Describe": {
       "prefix": "describe",
       "body": [
-        "- name: ${1:Should do something}",
+        "- name: ${1:Describe}",
         "  its:",
         "    - name: ${2:Should do something}",
         "      actions:",
