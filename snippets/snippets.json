@@ -1,6 +1,6 @@
 {
-    "Create a new Tests suit" : {
-      "prefix": "tests:",
+    "Create a new Tests suit": {
+      "prefix": "tests",
       "body": [
         "tests:",
         "  - name: ${1:Tests}",
@@ -21,8 +21,8 @@
       ],
       "description": "Create a new tests suit"
     },
-    "Create a Describe section" : {
-      "prefix": "describes:",
+    "Create a Describe section": {
+      "prefix": "describes",
       "body": [
         "describes:",
         "  - name: ${1:Describe}",
@@ -41,8 +41,8 @@
       ],
       "description": "Create a Describe section"
     },
-    "Create a Describe" : {
-      "prefix": "- name describe",
+    "Create a Describe": {
+      "prefix": "describe",
       "body": [
         "- name: ${1:Should do something}",
         "  its:",
@@ -60,8 +60,8 @@
       ],
       "description": "Create a Describe"
     },
-    "Create Its array section" : {
-      "prefix": "its:",
+    "Create Its array section": {
+      "prefix": "its",
       "body": [
         "its:",
         "  - name: ${1:Should do something}",
@@ -78,26 +78,400 @@
       ],
       "description": "Create Its array section"
     },
-    "Create a Its Asserts Action section" : {
-      "prefix": "- name it asserts isSome",
+    "Create a Its Asserts Action isSome section": {
+      "prefix": "it actions asserts isSome",
       "body": [
         "- name: ${1:Should do something}",
         "  actions:",
         "    - asserts:",
-        "        ${2:your_assert_key:}",
+        "        ${2:your_assert_key}:",
         "          isSome:",
+        "            args: [${3:\\$value_to_assess}]"
+      ],
+      "description": "Create a Its Asserts Action isSome section"
+    },
+    "Create a Its Asserts Action isNone section": {
+      "prefix": "it actions asserts isNone",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          isNone:",
+        "            args: [${3:\\$value_to_assess}]"
+      ],
+      "description": "Create a Its Asserts Action isNone section"
+    },
+    "Create a Its Asserts Action balanceDecreased section": {
+      "prefix": "it actions asserts balanceDecreased",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          balanceDecreased:",
+        "            args: [",
+        "              {",
+        "                balances: {",
+        "                  before: ${3:\\$balance_sender_before},",
+        "                  after: ${4:\\$balance_sender_after}",
+        "                },",
+        "                amount: ${5:*amount}",
+        "             }",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action balanceDecreased section"
+    },
+    "Create a Its Asserts Action balanceIncreased section": {
+      "prefix": "it actions asserts balanceDecreased",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          balanceIncreased:",
+        "            args: [",
+        "              {",
+        "                balances: {",
+        "                  before: ${3:\\$balance_receiver_before},",
+        "                  after: ${4:\\$balance_receiver_after}",
+        "                }",
+        "              }",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action balanceIncreased section"
+    },
+    "Create a Its Asserts Action assetsDecreased section": {
+      "prefix": "it actions asserts assetsDecreased",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          assetsDecreased:",
+        "            args: [",
+        "              {",
+        "                balances: {",
+        "                  before: ${3:\\$assets_sender_before},",
+        "                  after: ${4:\\$assets_sender_after}",
+        "                }",
+        "              }",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action assetsDecreased section"
+    },
+    "Create a Its Asserts Action assetsIncreased section": {
+      "prefix": "it actions asserts assetsIncreased",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          assetsIncreased:",
+        "            args: [",
+        "              {",
+        "                balances: {",
+        "                  before: ${3:\\$assets_receiver_before},",
+        "                  after: ${4:\\$assets_receiver_after}",
+        "                }",
+        "              }",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action assetsIncreased section"
+    },
+    "Create a Its Asserts Action equal section": {
+      "prefix": "it actions asserts equal",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          equal:",
+        "            args: [",
+        "             ${3:\\$value_to_compare_1},",
+        "             ${4:\\$value_to_compare_2}",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action equal section"
+    },
+    "Create a Its Asserts Action deepEqual section": {
+      "prefix": "it actions asserts deepEqual",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          deepEqual:",
+        "            args: [",
+        "             ${3:\\$value_to_compare_1},",
+        "             ${4:\\$value_to_compare_2}",
+        "            ]"
+      ],
+      "description": "Create a Its Asserts Action deepEqual section"
+    },
+    "Create a Its Asserts Action custom section": {
+      "prefix": "it actions asserts custom",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - asserts:",
+        "        ${2:your_assert_key}:",
+        "          custom:",
+        "            path: ${3:./path/to/custom/assert.ts}",
         "            args: []"
       ],
-      "description": "Create a Its Asserts Action section"
+      "description": "Create a Its Asserts Action custom section"
     },
-    // TODO: add more asserts
-    "Create a Its Query Action section" : {
-      "prefix": "- name it queries",
+    "Create an Asserts isSome section": {
+      "prefix": "asserts isSome",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      isSome:",
+        "        args: [${2:\\$value_to_assess}]"
+      ],
+      "description": "Create an Asserts isSome section"
+    },
+    "Create an Asserts isNone section": {
+      "prefix": "asserts isNone",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      isNone:",
+        "        args: [${2:\\$value_to_assess}]"
+      ],
+      "description": "Create an Asserts isNone section"
+    },
+    "Create an Asserts custom section": {
+      "prefix": "asserts custom",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      custom:",
+        "        path: ${2:./path/to/custom/assert.ts}",
+        "        args: []"
+      ],
+      "description": "Create an Asserts custom section"
+    },
+    "Create an Asserts deepEqual section": {
+      "prefix": "asserts deepEqual",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      deepEqual:",
+        "        args: [",
+        "         ${2:\\$value_to_compare_1},",
+        "         ${3:\\$value_to_compare_2}",
+        "        ]"
+      ],
+      "description": "Create an Asserts deepEqual section"
+    },
+      "Create an Asserts equal section": {
+        "prefix": "asserts equal",
+        "body": [
+          "- asserts:",
+          "    ${1:your_assert_key}:",
+          "      deepEqual:",
+          "        args: [",
+          "         ${2:\\$value_to_compare_1},",
+          "         ${3:\\$value_to_compare_2}",
+          "        ]"
+        ],
+      "description": "Create a Its Asserts equal section"
+    },
+    "Create an Asserts assetsIncreased section": {
+      "prefix": "asserts assetsIncreased",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      assetsIncreased:",
+        "        args: [",
+        "          {",
+        "            balances: {",
+        "              before: ${2:\\$assets_receiver_before},",
+        "              after: ${3:\\$assets_receiver_after}",
+        "            }",
+        "          }",
+        "        ]"
+      ],
+      "description": "Create an Asserts assetsIncreased section"
+    },
+    "Create an Asserts assetsDecreased section": {
+      "prefix": "asserts assetsDecreased",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      assetsDecreased:",
+        "        args: [",
+        "          {",
+        "            balances: {",
+        "              before: ${2:\\$assets_sender_before},",
+        "              after: ${3:\\$assets_sender_after}",
+        "            }",
+        "          }",
+        "        ]"
+      ],
+      "description": "Create an Asserts assetsDecreased section"
+    },
+    "Create an Asserts balanceIncreased section": {
+      "prefix": "asserts balanceIncreased",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      balanceIncreased:",
+        "        args: [",
+        "          {",
+        "            balances: {",
+        "              before: ${2:\\$balance_receiver_before},",
+        "              after: ${3:\\$balance_receiver_after}",
+        "            }",
+        "          }",
+        "        ]"
+      ],
+      "description": "Create an Asserts balanceIncreased section"
+    },
+    "Create an Asserts balanceDecreased section": {
+      "prefix": "asserts balanceDecreased",
+      "body": [
+        "- asserts:",
+        "    ${1:your_assert_key}:",
+        "      balanceDecreased:",
+        "        args: [",
+        "          {",
+        "            balances: {",
+        "              before: ${2:\\$balance_sender_before},",
+        "              after: ${3:\\$balance_sender_after}",
+        "            },",
+        "            amount: ${4:*amount}",
+        "          }",
+        "        ]"
+      ],
+      "description": "Create an Asserts balanceDecreased section"
+    },
+    "Create an Assert balanceDecreased section": {
+      "prefix": "assert balanceDecreased",
+      "body": [
+        "${1:your_assert_key}:",
+        "  balanceDecreased:",
+        "    args: [",
+        "      {",
+        "        balances: {",
+        "          before: ${2:\\$balance_sender_before},",
+        "          after: ${3:\\$balance_sender_after}",
+        "        },",
+        "        amount: ${4:*amount}",
+        "      }",
+        "    ]"
+      ],
+      "description": "Create an Assert balanceDecreased section"
+    },
+    "Create an Assert balanceIncrease section": {
+      "prefix": "assert balanceIncreased",
+      "body": [
+        "${1:your_assert_key}:",
+        "  assetsIncreased:",
+        "    args: [",
+        "      {",
+        "        balances: {",
+        "          before: ${2:\\$assets_receiver_before},",
+        "          after: ${3:\\$assets_receiver_after}",
+        "        }",
+        "      }",
+        "    ]"
+      ],
+      "description": "Create an Assert balanceIncreased section"
+    },
+    "Create an Assert assetsIncrease section": {
+      "prefix": "assert assertsIncreased",
+      "body": [
+        "${1:your_assert_key}:",
+        "  assetsIncreased:",
+        "    args: [",
+        "      {",
+        "        balances: {",
+        "          before: ${2:\\$assets_receiver_before},",
+        "          after: ${3:\\$assets_receiver_after}",
+        "        }",
+        "      }",
+        "    ]"
+      ],
+      "description": "Create an Assert assetsIncreased section"
+    },
+    "Create an Assert assetsDecrease section": {
+      "prefix": "assert assertsDecreased",
+      "body": [
+        "${1:your_assert_key}:",
+        "  assetsDecreased:",
+        "    args: [",
+        "      {",
+        "        balances: {",
+        "          before: ${2:\\$assets_sender_before},",
+        "          after: ${3:\\$assets_sender_after}",
+        "        }",
+        "      }",
+        "    ]"
+      ],
+      "description": "Create an Assert assetsDecreased section"
+    },
+    "Create an Assert equal section": {
+      "prefix": "assert equal",
+      "body": [
+        "${1:your_assert_key}:",
+        "  equal:",
+        "    args: [",
+        "     ${2:\\$value_to_compare_1},",
+        "     ${3:\\$value_to_compare_2}",
+        "    ]"
+      ],
+      "description": "Create an Assert equal section"
+    },
+    "Create an Assert deepEqual section": {
+      "prefix": "assert deepEqual",
+      "body": [
+        "${1:your_assert_key}:",
+        "  deepEqual:",
+        "    args: [",
+        "     ${2:\\$value_to_compare_1},",
+        "     ${3:\\$value_to_compare_2}",
+        "    ]"
+      ],
+      "description": "Create an Assert deepEqual section"
+    },
+    "Create an Assert custom section": {
+      "prefix": "assert custom",
+      "body": [
+        "${1:your_assert_key}:",
+        "  custom:",
+        "    path: ${2:./path/to/custom/assert.ts}",
+        "    args: []"
+      ],
+      "description": "Create an Assert custom section"
+    },
+    "Create an Assert isSome section": {
+      "prefix": "assert isSome",
+      "body": [
+        "${1:your_assert_key}:",
+        "  isSome:",
+        "    args: [${2:\\$value_to_assess}]"
+      ],
+      "description": "Create an Assert isSome section"
+    },
+    "Create an Assert isNone section": {
+      "prefix": "assert isNone",
+      "body": [
+        "${1:your_assert_key}:",
+        "  isNone:",
+        "    args: [${2:\\$value_to_assess}]"
+      ],
+      "description": "Create an Assert isNone section"
+    },
+    "Create a Its Query Action section": {
+      "prefix": "it actions queries",
       "body": [
         "- name: ${1:Should do something}",
         "  actions:",
         "    - queries:",
-        "        ${2:your_query_key:}",
+        "        ${2:your_query_key}:",
         "          chain: ${3:*your_chain}",
         "          pallet: ${4:palletName}",
         "          call: ${5:callName}",
@@ -105,11 +479,11 @@
       ],
       "description": "Create a Its Query Action section"
     },
-    "Create a Queries array section" : {
-      "prefix": "- queries:",
+    "Create a Queries array section": {
+      "prefix": "queries",
       "body": [
         "- queries:",
-        "    ${1:your_query:}",
+        "    ${1:your_query_key}:",
         "      chain: ${2:*your_chain}",
         "      pallet: ${3:palletName}",
         "      call: ${4:callName}",
@@ -117,10 +491,10 @@
       ],
       "description": "Create a Queries array section"
     },
-    "Create a Query section" : {
-      "prefix": "query:",
+    "Create a Query section": {
+      "prefix": "query",
       "body": [
-        "${1:your_query:}",
+        "${1:your_query_key}:",
         "  chain: ${2:*your_chain}",
         "  pallet: ${3:palletName}",
         "  call: ${4:callName}",
@@ -128,8 +502,22 @@
       ],
       "description": "Create a Query section"
     },
-    "Create a Its Extrinsics Action section" : {
-      "prefix": "- name it extrinsics",
+    "Create a Its Query Customs section": {
+      "prefix": "it actions queries",
+      "body": [
+        "- name: ${1:Should do something}",
+        "  actions:",
+        "    - customs:",
+        "      - path: ${2:./path/to/custom.ts}",
+        "        args: []",
+        "        events:",
+        "          - name: ${3:palletName.EventName}",
+        "            result: ${4}"
+      ],
+      "description": "Create a Its Query Custom section"
+    },
+    "Create a Its Extrinsics Action section": {
+      "prefix": "it actions extrinsics",
       "body": [
         "- name: ${1:Should do something}",
         "  actions:",
@@ -145,8 +533,8 @@
       ],
       "description": "Create a Its Extrinsics Action section"
     },
-    "Create an Extrinsics array section" : {
-      "prefix": "- extrinsics:",
+    "Create an Extrinsics array section": {
+      "prefix": "extrinsics",
       "body": [
         "- extrinsics:",
         "  - chain: ${1:*your_chain}",
@@ -160,8 +548,8 @@
       ],
       "description": "Create an Extrinsics array section"
     },
-    "Create an Extrinsic section" : {
-      "prefix": "- chain:",
+    "Create an Extrinsic section": {
+      "prefix": "extrinsic",
       "body": [
         "- chain: ${1:*your_chain}",
         "  signer: ${2:*signer}",
@@ -174,8 +562,8 @@
       ],
       "description": "Create an Extrinsic section"
     },
-    "Create an Event section" : {
-      "prefix": "events:",
+    "Create an Event section": {
+      "prefix": "events",
       "body": [
         "events:",
         "  - name: ${1:palletName.EventName}",
@@ -183,8 +571,8 @@
       ],
       "description": "Create an Event section"
     },
-    "Create an Event" : {
-      "prefix": "- name event",
+    "Create an Event": {
+      "prefix": "event",
       "body": [
         "- name: ${1:palletName.EventName}",
         "  result: ${2}"
